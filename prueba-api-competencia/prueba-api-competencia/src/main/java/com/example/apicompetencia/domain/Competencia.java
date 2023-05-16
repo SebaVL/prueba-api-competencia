@@ -23,10 +23,10 @@ public class Competencia {
     private String nombreCompetencia;
 
     @Column(name = "fechaInicio", nullable = false)
-    private LocalDateTime fechaInicio;
+    private String fechaInicio;
 
     @Column(name = "fechaFin", nullable = false)
-    private LocalDateTime fechaFin;
+    private String fechaFin;
 
 
 }
