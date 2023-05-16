@@ -1,0 +1,10 @@
+package com.example.apicompetencia.service;
+
+import com.example.apicompetencia.domain.Competencia;
+
+import java.util.List;
+
+public interface CompetenciaService {
+    Competencia createCompetencia(Competencia competencia);
+    List<Competencia> getAllCompetencias();
+}
