@@ -23,4 +23,22 @@ public class CompetenciaServiceImpl implements CompetenciaService{
     public List<Competencia> getAllCompetencias() {
         return competenciaRepository.findAll();
     }
+
+    @Override
+    public Competencia modifyCompetencia(Competencia competencia){
+        Competencia competenciaToUpdate = competenciaRepository.findById(competencia.getIdCompetencia()).orElse(null);
+        if(competenciaToUpdate != null){
+            competenciaToUpdate.setNombreCompetencia(competencia.getNombreCompetencia());
+            competenciaToUpdate.setFechaInicio(competencia.getFechaInicio());
+            competenciaToUpdate.setFechaFin(competencia.getFechaFin());
+            return competenciaRepository.save(competenciaToUpdate);
+        }else {
+            return null;
+        }
+    }
+
+    @Override
+    public void deleteCompetencia(Long idCompetencia){
+        competenciaRepository.deleteById(idCompetencia);
+    }
 }

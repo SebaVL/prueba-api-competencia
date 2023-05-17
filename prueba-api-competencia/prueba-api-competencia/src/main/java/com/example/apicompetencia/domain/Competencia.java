@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
+import java.util.Date;
+
 @Entity
 @Table(name= "competencias")
 @Data
@@ -19,14 +21,14 @@ public class Competencia {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCompetencia;
 
-    @Column(name = "nombreCompetencia", nullable = false)
+    @Column(name = "nombreCompetencia", nullable = false, unique = true)
     private String nombreCompetencia;
 
     @Column(name = "fechaInicio", nullable = false)
-    private String fechaInicio;
+    private Date fechaInicio;
 
     @Column(name = "fechaFin", nullable = false)
-    private String fechaFin;
+    private Date fechaFin;
 
 
 }
